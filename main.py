@@ -19,7 +19,19 @@ while True:
 
     if answer_state in states:
         print("nailed!")
-        correct_answers.append(answer_state)
+        if answer_state not in correct_answers:
+            correct_answers.append(answer_state)
+            #row needed to print the turtle(state name) 
+            data_row = states_data[states_data['state']== answer_state]  
+            x_coor = int(data_row.x)
+            y_coor = int(data_row.y)
+            new_title = turtle.Turtle()
+            new_title.ht()
+            new_title.penup()
+        
+            new_title.goto(x=x_coor,y=y_coor)
+            new_title.write(arg=f"{answer_state}",align='center', font=('Arial',8, 'normal'))
+           
     # states_data[(states_data['state']).lower() == answer_state]
 
 
