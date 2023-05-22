@@ -13,6 +13,10 @@ screen.addshape(image)
 turtle.shape(image)
 
 answer_state = screen.textinput(title="Guess the state", prompt="Pick a state name")
-answer_state = answer_state.lower()
-# print(answer_state)
+answer_state = answer_state.title()
+states = states_data['state'].to_list()
+# print(states)
 
+if answer_state in states:
+    print("nailed!")
+# states_data[(states_data['state']).lower() == answer_state]
